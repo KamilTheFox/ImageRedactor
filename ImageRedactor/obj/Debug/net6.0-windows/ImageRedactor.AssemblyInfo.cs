@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ImageRedactor")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3d757ad6985d9090123873fdefa060244c45f7d9")]
 [assembly: System.Reflection.AssemblyProductAttribute("ImageRedactor")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ImageRedactor")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

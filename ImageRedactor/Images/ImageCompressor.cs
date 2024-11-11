@@ -16,6 +16,7 @@ namespace Images
         private const int ChannelCount = 3;
 
         public Bitmap SourceImage { get; private set; }
+
         public event Action<int> CompressionProgress;
 
         public ImageCompressor(Bitmap sourceImage)
@@ -65,8 +66,10 @@ namespace Images
             return channels;
         }
 
-        public async Task<Bitmap> CompressAsync(double quality)
+        public async Task<Bitmap> CompressAsync(double quality, Action<int> progress)
         {
+            CompressionProgress += progress;
+
             if (quality < 0 || quality > 100)
                 throw new ArgumentException("Quality should be between 0 and 100", nameof(quality));
 
@@ -80,7 +83,7 @@ namespace Images
 
             var result = CreateCompressedImage(compressedChannels);
             UpdateProgress(100);
-
+            CompressionProgress -= progress;
             return result;
         }
 

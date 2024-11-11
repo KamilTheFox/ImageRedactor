@@ -5,8 +5,7 @@ namespace ImageRedactor
 {
     public partial class Form1 : Form
     {
-        private ImageCompressor imageCompressor;
-
+        private Bitmap imageConverable;
         private int progress;
         public Form1()
         {
@@ -28,7 +27,7 @@ namespace ImageRedactor
             progress = 0;
             using (OpenFileDialog dialog = new OpenFileDialog())
             {
-                dialog.Filter = "JPEG Files(*.jpeg)|*.jpeg|All files (*.*)|*.*";
+                dialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.gif;*.bmp;*.tiff;*.tif;*.webp|All Files|*.*";
                 if (dialog.ShowDialog() == DialogResult.OK)
                 {
                     Bitmap bmp = new Bitmap(dialog.FileName);
@@ -46,7 +45,7 @@ namespace ImageRedactor
                         bmp = newImage;
                     }
                     pictureBox1.BackgroundImage = bmp;
-                    imageCompressor = new ImageCompressor(bmp);
+                    imageConverable = bmp;
                 }
             }
         }
@@ -54,13 +53,16 @@ namespace ImageRedactor
         private async void buttonCompress_Click(object sender, EventArgs e)
         {
             double procent = 100;
-            if(!double.TryParse(procentCompress.Text, out procent))
+            using (ImageCompressor imageCompressor = new ImageCompressor(imageConverable))
             {
-                MessageBox.Show("Введите процент сжатия");
-                return;
+                if (!double.TryParse(procentCompress.Text, out procent))
+                {
+                    MessageBox.Show("Введите процент сжатия");
+                    return;
+                }
+                imageConverable = await imageCompressor.CompressAsync(procent, (progressCount) => progress = progressCount);
             }
-            Bitmap map = await imageCompressor.CompressAsync(procent);
-            pictureBox1.BackgroundImage = map;
+            pictureBox1.BackgroundImage = imageConverable;
         }
 
         private void saveImage_Click(object sender, EventArgs e)

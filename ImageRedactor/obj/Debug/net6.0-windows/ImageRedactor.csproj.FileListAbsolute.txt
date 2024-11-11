@@ -18,3 +18,24 @@ D:\C Sharp\ImageRedactor\ImageRedactor\obj\Debug\net6.0-windows\ImageRedactor.ge
 D:\C Sharp\ImageRedactor\ImageRedactor\obj\Debug\net6.0-windows\ImageRedactor.Properties.Resources.resources
 D:\C Sharp\ImageRedactor\ImageRedactor\bin\Debug\net6.0-windows\MathNet.Numerics.dll
 D:\C Sharp\ImageRedactor\ImageRedactor\obj\Debug\net6.0-windows\ImageRedactor.csproj.CopyComplete
+C:\Users\User\Documents\GitHub\ImageRedactor\ImageRedactor\bin\Debug\net6.0-windows\ImageRedactor.exe
+C:\Users\User\Documents\GitHub\ImageRedactor\ImageRedactor\bin\Debug\net6.0-windows\ImageRedactor.deps.json
+C:\Users\User\Documents\GitHub\ImageRedactor\ImageRedactor\bin\Debug\net6.0-windows\ImageRedactor.runtimeconfig.json
+C:\Users\User\Documents\GitHub\ImageRedactor\ImageRedactor\bin\Debug\net6.0-windows\ImageRedactor.dll
+C:\Users\User\Documents\GitHub\ImageRedactor\ImageRedactor\bin\Debug\net6.0-windows\ImageRedactor.pdb
+C:\Users\User\Documents\GitHub\ImageRedactor\ImageRedactor\bin\Debug\net6.0-windows\MathNet.Numerics.dll
+C:\Users\User\Documents\GitHub\ImageRedactor\ImageRedactor\obj\Debug\net6.0-windows\ImageRedactor.csproj.AssemblyReference.cache
+C:\Users\User\Documents\GitHub\ImageRedactor\ImageRedactor\obj\Debug\net6.0-windows\ImageRedactor.Form1.resources
+C:\Users\User\Documents\GitHub\ImageRedactor\ImageRedactor\obj\Debug\net6.0-windows\ImageRedactor.Properties.Resources.resources
+C:\Users\User\Documents\GitHub\ImageRedactor\ImageRedactor\obj\Debug\net6.0-windows\ImageRedactor.csproj.GenerateResource.cache
+C:\Users\User\Documents\GitHub\ImageRedactor\ImageRedactor\obj\Debug\net6.0-windows\ImageRedactor.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Documents\GitHub\ImageRedactor\ImageRedactor\obj\Debug\net6.0-windows\ImageRedactor.AssemblyInfoInputs.cache
+C:\Users\User\Documents\GitHub\ImageRedactor\ImageRedactor\obj\Debug\net6.0-windows\ImageRedactor.AssemblyInfo.cs
+C:\Users\User\Documents\GitHub\ImageRedactor\ImageRedactor\obj\Debug\net6.0-windows\ImageRedactor.csproj.CoreCompileInputs.cache
+C:\Users\User\Documents\GitHub\ImageRedactor\ImageRedactor\obj\Debug\net6.0-windows\ImageRedactor.sourcelink.json
+C:\Users\User\Documents\GitHub\ImageRedactor\ImageRedactor\obj\Debug\net6.0-windows\ImageRed.5930C032.Up2Date
+C:\Users\User\Documents\GitHub\ImageRedactor\ImageRedactor\obj\Debug\net6.0-windows\ImageRedactor.dll
+C:\Users\User\Documents\GitHub\ImageRedactor\ImageRedactor\obj\Debug\net6.0-windows\refint\ImageRedactor.dll
+C:\Users\User\Documents\GitHub\ImageRedactor\ImageRedactor\obj\Debug\net6.0-windows\ImageRedactor.pdb
+C:\Users\User\Documents\GitHub\ImageRedactor\ImageRedactor\obj\Debug\net6.0-windows\ImageRedactor.genruntimeconfig.cache
+C:\Users\User\Documents\GitHub\ImageRedactor\ImageRedactor\obj\Debug\net6.0-windows\ref\ImageRedactor.dll
