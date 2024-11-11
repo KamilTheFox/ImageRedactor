@@ -30,10 +30,10 @@ namespace Images
         private Matrix<double>[] ExtractColorChannels(Bitmap bitmap)
         {
             var channels = new Matrix<double>[ChannelCount];
-            for (int i = 0; i < ChannelCount; i++)
+            Parallel.For(0, ChannelCount, (ch) =>
             {
-                channels[i] = Matrix<double>.Build.Dense(height, width);
-            }
+                channels[ch] = Matrix<double>.Build.Dense(height, width);
+            });
 
             var bitmapData = bitmap.LockBits(
                 new Rectangle(0, 0, width, height),
