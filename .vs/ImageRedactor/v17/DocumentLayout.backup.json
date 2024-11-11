@@ -3,12 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\User\\Documents\\GitHub\\ImageRedactor\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{022D9F99-92BA-442D-AA9C-D10F5C08C408}|ImageRedactor\\ImageRedactor.csproj|c:\\users\\user\\documents\\github\\imageredactor\\imageredactor\\images\\negativeimage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{022D9F99-92BA-442D-AA9C-D10F5C08C408}|ImageRedactor\\ImageRedactor.csproj|solutionrelative:imageredactor\\images\\negativeimage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{022D9F99-92BA-442D-AA9C-D10F5C08C408}|ImageRedactor\\ImageRedactor.csproj|c:\\users\\user\\documents\\github\\imageredactor\\imageredactor\\images\\imagecompressor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{022D9F99-92BA-442D-AA9C-D10F5C08C408}|ImageRedactor\\ImageRedactor.csproj|solutionrelative:imageredactor\\images\\imagecompressor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{022D9F99-92BA-442D-AA9C-D10F5C08C408}|ImageRedactor\\ImageRedactor.csproj|c:\\users\\user\\documents\\github\\imageredactor\\imageredactor\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{022D9F99-92BA-442D-AA9C-D10F5C08C408}|ImageRedactor\\ImageRedactor.csproj|solutionrelative:imageredactor\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{022D9F99-92BA-442D-AA9C-D10F5C08C408}|ImageRedactor\\ImageRedactor.csproj|c:\\users\\user\\documents\\github\\imageredactor\\imageredactor\\mainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{022D9F99-92BA-442D-AA9C-D10F5C08C408}|ImageRedactor\\ImageRedactor.csproj|solutionrelative:imageredactor\\mainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{022D9F99-92BA-442D-AA9C-D10F5C08C408}|ImageRedactor\\ImageRedactor.csproj|C:\\Users\\User\\Documents\\GitHub\\ImageRedactor\\imageredactor\\mainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{022D9F99-92BA-442D-AA9C-D10F5C08C408}|ImageRedactor\\ImageRedactor.csproj|solutionrelative:imageredactor\\mainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,30 +26,55 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Form1.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Documents\\GitHub\\ImageRedactor\\ImageRedactor\\Form1.cs",
-              "RelativeDocumentMoniker": "ImageRedactor\\Form1.cs",
-              "ToolTip": "C:\\Users\\User\\Documents\\GitHub\\ImageRedactor\\ImageRedactor\\Form1.cs",
-              "RelativeToolTip": "ImageRedactor\\Form1.cs",
-              "ViewState": "AgIAADUAAAAAAAAAAAAIwDUAAAAJAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "NegativeImage.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Documents\\GitHub\\ImageRedactor\\ImageRedactor\\Images\\NegativeImage.cs",
+              "RelativeDocumentMoniker": "ImageRedactor\\Images\\NegativeImage.cs",
+              "ToolTip": "C:\\Users\\User\\Documents\\GitHub\\ImageRedactor\\ImageRedactor\\Images\\NegativeImage.cs",
+              "RelativeToolTip": "ImageRedactor\\Images\\NegativeImage.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABMAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-11T07:11:22.698Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MainMenu.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]",
+              "DocumentMoniker": "C:\\Users\\User\\Documents\\GitHub\\ImageRedactor\\ImageRedactor\\MainMenu.cs",
+              "RelativeDocumentMoniker": "ImageRedactor\\MainMenu.cs",
+              "ToolTip": "C:\\Users\\User\\Documents\\GitHub\\ImageRedactor\\ImageRedactor\\MainMenu.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]",
+              "RelativeToolTip": "ImageRedactor\\MainMenu.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-11T06:46:10.84Z",
+              "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MainMenu.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Documents\\GitHub\\ImageRedactor\\ImageRedactor\\MainMenu.cs",
+              "RelativeDocumentMoniker": "ImageRedactor\\MainMenu.cs",
+              "ToolTip": "C:\\Users\\User\\Documents\\GitHub\\ImageRedactor\\ImageRedactor\\MainMenu.cs",
+              "RelativeToolTip": "ImageRedactor\\MainMenu.cs",
+              "ViewState": "AgIAAEYAAAAAAAAAAAA0wGYAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-11T06:11:12.637Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "ImageCompressor.cs",
               "DocumentMoniker": "C:\\Users\\User\\Documents\\GitHub\\ImageRedactor\\ImageRedactor\\Images\\ImageCompressor.cs",
               "RelativeDocumentMoniker": "ImageRedactor\\Images\\ImageCompressor.cs",
               "ToolTip": "C:\\Users\\User\\Documents\\GitHub\\ImageRedactor\\ImageRedactor\\Images\\ImageCompressor.cs",
               "RelativeToolTip": "ImageRedactor\\Images\\ImageCompressor.cs",
-              "ViewState": "AgIAAC8AAAAAAAAAAAAwwC4AAAA4AAAAAAAAAA==",
+              "ViewState": "AgIAAIQAAAAAAAAAAAAmwKwAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-11T06:11:12.637Z",
               "EditorCaption": ""

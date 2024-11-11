@@ -25,7 +25,6 @@ C:\Users\User\Documents\GitHub\ImageRedactor\ImageRedactor\bin\Debug\net6.0-wind
 C:\Users\User\Documents\GitHub\ImageRedactor\ImageRedactor\bin\Debug\net6.0-windows\ImageRedactor.pdb
 C:\Users\User\Documents\GitHub\ImageRedactor\ImageRedactor\bin\Debug\net6.0-windows\MathNet.Numerics.dll
 C:\Users\User\Documents\GitHub\ImageRedactor\ImageRedactor\obj\Debug\net6.0-windows\ImageRedactor.csproj.AssemblyReference.cache
-C:\Users\User\Documents\GitHub\ImageRedactor\ImageRedactor\obj\Debug\net6.0-windows\ImageRedactor.Form1.resources
 C:\Users\User\Documents\GitHub\ImageRedactor\ImageRedactor\obj\Debug\net6.0-windows\ImageRedactor.Properties.Resources.resources
 C:\Users\User\Documents\GitHub\ImageRedactor\ImageRedactor\obj\Debug\net6.0-windows\ImageRedactor.csproj.GenerateResource.cache
 C:\Users\User\Documents\GitHub\ImageRedactor\ImageRedactor\obj\Debug\net6.0-windows\ImageRedactor.GeneratedMSBuildEditorConfig.editorconfig
@@ -39,3 +38,4 @@ C:\Users\User\Documents\GitHub\ImageRedactor\ImageRedactor\obj\Debug\net6.0-wind
 C:\Users\User\Documents\GitHub\ImageRedactor\ImageRedactor\obj\Debug\net6.0-windows\ImageRedactor.pdb
 C:\Users\User\Documents\GitHub\ImageRedactor\ImageRedactor\obj\Debug\net6.0-windows\ImageRedactor.genruntimeconfig.cache
 C:\Users\User\Documents\GitHub\ImageRedactor\ImageRedactor\obj\Debug\net6.0-windows\ref\ImageRedactor.dll
+C:\Users\User\Documents\GitHub\ImageRedactor\ImageRedactor\obj\Debug\net6.0-windows\ImageRedactor.MainMenu.resources

@@ -1,13 +1,16 @@
 using Images;
+using MathNet.Numerics.LinearAlgebra;
+using System.Drawing;
 using System.Drawing.Imaging;
 
 namespace ImageRedactor
 {
-    public partial class Form1 : Form
+    public partial class MainMenu : Form
     {
         private Bitmap imageConverable;
         private int progress;
-        public Form1()
+        private const int ChannelCount = 3;
+        public MainMenu()
         {
             InitializeComponent();
             UpdateProgressBar();
@@ -34,7 +37,7 @@ namespace ImageRedactor
                     bool hasAlpha = bmp.PixelFormat.HasFlag(PixelFormat.Alpha) ||
                     bmp.PixelFormat == PixelFormat.Format32bppArgb ||
                     bmp.PixelFormat == PixelFormat.Format64bppArgb;
-                    if(hasAlpha)
+                    if (hasAlpha)
                     {
                         var newImage = new Bitmap(bmp.Width, bmp.Height, PixelFormat.Format24bppRgb);
                         using (Graphics g = Graphics.FromImage(newImage))
@@ -90,6 +93,20 @@ namespace ImageRedactor
         {
             ImageCodecInfo[] codecs = ImageCodecInfo.GetImageEncoders();
             return codecs.First(codec => codec.FormatID == ImageFormat.Jpeg.Guid);
+        }
+
+        private void buttonNegative_Click(object sender, EventArgs e)
+        {
+            progress = 0;
+            using (NegativeImage negative = new NegativeImage(imageConverable))
+            {
+                negative.Succsess += (bmp) =>
+                {
+                    progress = 100;
+                    pictureBox1.BackgroundImage = imageConverable = bmp;
+                };
+                negative.SetNegative();
+            }
         }
     }
 }
