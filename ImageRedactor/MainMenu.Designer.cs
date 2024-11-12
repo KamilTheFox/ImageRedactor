@@ -30,11 +30,12 @@
         {
             buttonOpenImage = new Button();
             pictureBox1 = new PictureBox();
-            procentCompress = new TextBox();
             buttonCompress = new Button();
             saveImage = new Button();
             progressBar1 = new ProgressBar();
             buttonNegative = new Button();
+            hScrollBar1 = new HScrollBar();
+            labelInfo = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -56,13 +57,6 @@
             pictureBox1.Size = new Size(766, 670);
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
-            // 
-            // procentCompress
-            // 
-            procentCompress.Location = new Point(9, 43);
-            procentCompress.Name = "procentCompress";
-            procentCompress.Size = new Size(158, 23);
-            procentCompress.TabIndex = 2;
             // 
             // buttonCompress
             // 
@@ -101,6 +95,24 @@
             buttonNegative.UseVisualStyleBackColor = true;
             buttonNegative.Click += buttonNegative_Click;
             // 
+            // hScrollBar1
+            // 
+            this.hScrollBar1.Location = new System.Drawing.Point(11, 52);
+            this.hScrollBar1.Maximum = 109;
+            this.hScrollBar1.Name = "hScrollBar1";
+            this.hScrollBar1.Size = new System.Drawing.Size(155, 17);
+            this.hScrollBar1.TabIndex = 6;
+            this.hScrollBar1.Scroll += new System.Windows.Forms.ScrollEventHandler(this.hScrollBar1_Scroll);
+            // 
+            // label1
+            // 
+            this.labelInfo.AutoSize = true;
+            this.labelInfo.Location = new System.Drawing.Point(10, 36);
+            this.labelInfo.Name = "label1";
+            this.labelInfo.Size = new System.Drawing.Size(60, 15);
+            this.labelInfo.TabIndex = 7;
+            this.labelInfo.Text = "Сжатие: 0";
+            // 
             // MainMenu
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -111,8 +123,9 @@
             Controls.Add(progressBar1);
             Controls.Add(saveImage);
             Controls.Add(buttonCompress);
-            Controls.Add(procentCompress);
             Controls.Add(pictureBox1);
+            this.Controls.Add(this.labelInfo);
+            this.Controls.Add(this.hScrollBar1);
             Controls.Add(buttonOpenImage);
             ForeColor = SystemColors.ControlText;
             FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -128,10 +141,11 @@
 
         private Button buttonOpenImage;
         private PictureBox pictureBox1;
-        private TextBox procentCompress;
         private Button buttonCompress;
         private Button saveImage;
         private ProgressBar progressBar1;
         private Button buttonNegative;
+        private HScrollBar hScrollBar1;
+        private Label labelInfo;
     }
 }

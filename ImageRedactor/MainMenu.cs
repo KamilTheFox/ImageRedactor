@@ -55,14 +55,10 @@ namespace ImageRedactor
 
         private async void buttonCompress_Click(object sender, EventArgs e)
         {
-            double procent = 100;
             using (ImageCompressor imageCompressor = new ImageCompressor(imageConverable))
             {
-                if (!double.TryParse(procentCompress.Text, out procent))
-                {
-                    MessageBox.Show("Введите процент сжатия");
-                    return;
-                }
+                int procent = Math.Abs(100 - hScrollBar1.Value);
+                imageCompressor.CompressionProgress += (t) => progress = t;
                 imageConverable = await imageCompressor.CompressAsync(procent, (progressCount) => progress = progressCount);
             }
             pictureBox1.BackgroundImage = imageConverable;
@@ -88,6 +84,11 @@ namespace ImageRedactor
                     );
                 }
             }
+        }
+        private void hScrollBar1_Scroll(object sender, ScrollEventArgs e)
+        {
+            string newText = $"Сжатие: {hScrollBar1.Value}";
+            labelInfo.Text = newText;
         }
         private ImageCodecInfo GetJpegEncoder()
         {
