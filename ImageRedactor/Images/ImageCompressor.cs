@@ -47,20 +47,27 @@ namespace Images
 
         public async Task<Bitmap> CompressAsync(double quality, Action<int> progress)
         {
-            CompressionProgress += progress;
+            UpdateProgress(1);
 
             if (quality < 0 || quality > 100)
                 throw new ArgumentException("Quality should be between 0 and 100", nameof(quality));
-
-            UpdateProgress(5);
-
+            Thread thread = new Thread(() =>
+            {
+                while (this.progress < 75)
+                {
+                    UpdateProgress(this.progress + 1);
+                    Thread.Sleep(new Random().Next(400,2000));
+                }
+            });
+            thread.Start();
             var compressionTasks = colorChannels
                 .Select(channel => Task.Run(() => CompressChannel(channel, quality)))
                 .ToArray();
-
+            
             var compressedChannels = await Task.WhenAll(compressionTasks);
 
             var result = CreateCompressedImage(compressedChannels);
+            thread = null;
             UpdateProgress(100);
             CompressionProgress -= progress;
             return result;
@@ -73,16 +80,13 @@ namespace Images
                 return (byte)Math.Clamp(channels[indexColor][y, x], 0, 255);
             });
         }
-
-       
-
         private double[,] CompressChannel(Matrix<double> channel, double quality)
         {
             var svd = ComputeSVD(channel);
-            UpdateProgress(progress + 5);
+            UpdateProgress(progress + 6);
 
             int k = CalculateComponentCount(svd.S, quality);
-            UpdateProgress(progress + 5);
+            UpdateProgress(progress + 6);
 
             return ReconstructMatrix(svd.U, svd.S, svd.VT, k);
         }
@@ -92,16 +96,16 @@ namespace Images
             var svd = matrix.Svd();
             return (svd.U, svd.S, svd.VT);
         }
-
         private double[,] ReconstructMatrix(Matrix<double> U, Vector<double> S, Matrix<double> VT, int k)
         {
             var Uk = U.SubMatrix(0, U.RowCount, 0, k);
+            UpdateProgress(progress + 6);
             var Sk = DiagonalMatrix.Build.DenseDiagonal(k, k, i => S[i]);
+            UpdateProgress(progress + 6);
             var VTk = VT.SubMatrix(0, k, 0, VT.ColumnCount);
-
+            UpdateProgress(progress + 6);
             var result = Uk.Multiply(Sk).Multiply(VTk);
-            UpdateProgress(progress + 5);
-
+            UpdateProgress(progress + 6);
             return result.ToArray();
         }
 
