@@ -108,6 +108,7 @@ namespace ImageRedactor
                 };
                 negative.SetNegative();
             }
+            progress = 100;
         }
     }
 }

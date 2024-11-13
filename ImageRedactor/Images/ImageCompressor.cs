@@ -35,33 +35,12 @@ namespace Images
                 channels[ch] = Matrix<double>.Build.Dense(height, width);
             });
 
-            var bitmapData = bitmap.LockBits(
-                new Rectangle(0, 0, width, height),
-                ImageLockMode.ReadOnly,
-                PixelFormat.Format24bppRgb);
-
-            try
+            bitmap.ParallelForFixResult((x, y, r, g, b) =>
             {
-                unsafe
-                {
-                    byte* ptr = (byte*)bitmapData.Scan0;
-                    Parallel.For(0, height, y =>
-                    {
-                        byte* row = ptr + (y * bitmapData.Stride);
-                        for (int x = 0; x < width; x++)
-                        {
-                            int offset = x * 3;
-                            channels[0][y, x] = row[offset + 2]; // R
-                            channels[1][y, x] = row[offset + 1]; // G
-                            channels[2][y, x] = row[offset];     // B
-                        }
-                    });
-                }
-            }
-            finally
-            {
-                bitmap.UnlockBits(bitmapData);
-            }
+                channels[0][y, x] = r;
+                channels[1][y, x] = g;
+                channels[2][y, x] = b;
+            });
 
             return channels;
         }
@@ -89,37 +68,13 @@ namespace Images
 
         private Bitmap CreateCompressedImage(double[][,] channels)
         {
-            var result = new Bitmap(width, height);
-            var resultData = result.LockBits(
-                new Rectangle(0, 0, width, height),
-                ImageLockMode.WriteOnly,
-                PixelFormat.Format24bppRgb);
-
-            try
+            return SourceImage.ParallelForFixResult((x, y, indexColor, pixel) =>
             {
-                unsafe
-                {
-                    byte* ptr = (byte*)resultData.Scan0;
-                    Parallel.For(0, height, y =>
-                    {
-                        byte* row = ptr + (y * resultData.Stride);
-                        for (int x = 0; x < width; x++)
-                        {
-                            int offset = x * 3;
-                            row[offset + 2] = (byte)Math.Clamp(channels[0][y, x], 0, 255); // R
-                            row[offset + 1] = (byte)Math.Clamp(channels[1][y, x], 0, 255); // G
-                            row[offset] = (byte)Math.Clamp(channels[2][y, x], 0, 255);     // B
-                        }
-                    });
-                }
-            }
-            finally
-            {
-                result.UnlockBits(resultData);
-            }
-
-            return result;
+                return (byte)Math.Clamp(channels[indexColor][y, x], 0, 255);
+            });
         }
+
+       
 
         private double[,] CompressChannel(Matrix<double> channel, double quality)
         {

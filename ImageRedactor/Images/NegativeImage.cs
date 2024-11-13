@@ -9,9 +9,7 @@ namespace Images
 {
     public class NegativeImage : IDisposable
     {
-        private readonly Bitmap bitmap;
-
-        private readonly BitmapData data;
+        private Bitmap bitmap;
 
         public event Action<string> Errors;
 
@@ -20,32 +18,19 @@ namespace Images
         private bool isSuccsess;
         public NegativeImage(Bitmap bitmap)
         {
-            this.bitmap = bitmap.Clone(new Rectangle(0, 0, bitmap.Width, bitmap.Height), PixelFormat.Format24bppRgb);
-            data = this.bitmap.LockBits(new Rectangle(0, 0, bitmap.Width, bitmap.Height), ImageLockMode.ReadOnly, PixelFormat.Format24bppRgb);
+            this.bitmap = bitmap;
         }
         public void SetNegative()
         {
             try
             {
-                unsafe
+                bitmap = bitmap.ParallelForFixResult((x, y, indexColor, pixel) =>
                 {
-                    byte* ptr = (byte*)data.Scan0;
-                    Parallel.For(0, data.Height, y =>
-                    {
-                        byte* row = ptr + (y * data.Stride);
-                        for (int x = 0; x < data.Width; x++)
-                        {
-                            int offset = x * 3;
-                            row[offset + 2] = (byte)(byte.MaxValue - row[offset + 2]);
-                            row[offset + 1] = (byte)(byte.MaxValue - row[offset + 1]);
-                            row[offset] = (byte)(byte.MaxValue - row[offset]);
-                        }
-                    });
-                }
+                    return (byte)(byte.MaxValue - pixel);
+                });
                 isSuccsess = true;
-                bitmap.UnlockBits(data);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Errors?.Invoke(ex.Message);
             }
